@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6749315BD30144D28A791BAC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B24EE8758C91449F8A697F76 /* libPods.a */; };
 		7FD359CCADCA4C95917FCCB7 /* libPods-MarisTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD644E9B54C41E297826667 /* libPods-MarisTests.a */; };
+		CB534C341C52562000AD02C0 /* REMHTTPSessionManager+Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = CB534C331C52562000AD02C0 /* REMHTTPSessionManager+Chain.m */; };
+		CB534C381C52596000AD02C0 /* MarisClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CB534C371C52596000AD02C0 /* MarisClient.m */; };
 		D205A50B1A988D5800808613 /* NSError+Maris.m in Sources */ = {isa = PBXBuildFile; fileRef = D205A50A1A988D5800808613 /* NSError+Maris.m */; };
 		D29F18EC18E964FD006A9C2D /* REMCompoundResponseSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29F18EB18E964FD006A9C2D /* REMCompoundResponseSerializerTests.m */; };
 		D2AE2E5819098830007AB3EC /* REMHTTPSessionManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AE2E5719098830007AB3EC /* REMHTTPSessionManagerTests.m */; };
@@ -49,6 +51,10 @@
 		2747B27EC261A5D94F018E2D /* Pods-MarisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarisTests/Pods-MarisTests.release.xcconfig"; sourceTree = "<group>"; };
 		B022BB31308B80A5B9611803 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B24EE8758C91449F8A697F76 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB534C321C52562000AD02C0 /* REMHTTPSessionManager+Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "REMHTTPSessionManager+Chain.h"; sourceTree = "<group>"; };
+		CB534C331C52562000AD02C0 /* REMHTTPSessionManager+Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "REMHTTPSessionManager+Chain.m"; sourceTree = "<group>"; };
+		CB534C361C52596000AD02C0 /* MarisClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarisClient.h; path = Client/MarisClient.h; sourceTree = "<group>"; };
+		CB534C371C52596000AD02C0 /* MarisClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarisClient.m; path = Client/MarisClient.m; sourceTree = "<group>"; };
 		D205A5091A988D5800808613 /* NSError+Maris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Maris.h"; sourceTree = "<group>"; };
 		D205A50A1A988D5800808613 /* NSError+Maris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Maris.m"; sourceTree = "<group>"; };
 		D29F18EB18E964FD006A9C2D /* REMCompoundResponseSerializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REMCompoundResponseSerializerTests.m; sourceTree = "<group>"; };
@@ -124,6 +130,15 @@
 				2747B27EC261A5D94F018E2D /* Pods-MarisTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CB534C391C52596800AD02C0 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				CB534C361C52596000AD02C0 /* MarisClient.h */,
+				CB534C371C52596000AD02C0 /* MarisClient.m */,
+			);
+			name = Client;
 			sourceTree = "<group>";
 		};
 		D205A5081A988D5800808613 /* Categories */ = {
@@ -219,6 +234,7 @@
 		D2EBF7DF18E6CBCC003BF18F /* Maris */ = {
 			isa = PBXGroup;
 			children = (
+				CB534C391C52596800AD02C0 /* Client */,
 				D2EC9B281A9C9AFE003C7D36 /* Maris.h */,
 				D2EBF7FC18E70DAE003BF18F /* NSURLSession */,
 				D2EBF7ED18E6CCE0003BF18F /* Serializers */,
@@ -275,6 +291,8 @@
 			children = (
 				D2EBF7FD18E70DAE003BF18F /* REMHTTPSessionManager.h */,
 				D2EBF7FE18E70DAE003BF18F /* REMHTTPSessionManager.m */,
+				CB534C321C52562000AD02C0 /* REMHTTPSessionManager+Chain.h */,
+				CB534C331C52562000AD02C0 /* REMHTTPSessionManager+Chain.m */,
 			);
 			path = NSURLSession;
 			sourceTree = "<group>";
@@ -503,7 +521,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB534C381C52596000AD02C0 /* MarisClient.m in Sources */,
 				D2EBF7FF18E70DAE003BF18F /* REMHTTPSessionManager.m in Sources */,
+				CB534C341C52562000AD02C0 /* REMHTTPSessionManager+Chain.m in Sources */,
 				D2EBF81D18E7F0C0003BF18F /* ESPNAthlete.m in Sources */,
 				D2EBF7E718E6CBCC003BF18F /* main.m in Sources */,
 				D205A50B1A988D5800808613 /* NSError+Maris.m in Sources */,
